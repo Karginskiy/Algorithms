@@ -1,6 +1,7 @@
 class DArray {
 
     /**
+     * Merge sort from Robert Lafore's "Data structures & algorithms in Java"
      * Will added information when I'll fully understood it.
      */
 
