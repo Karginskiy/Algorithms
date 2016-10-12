@@ -1,5 +1,9 @@
 class DArray {
 
+    /**
+     * Will added information when I'll fully understood it.
+     */
+
     private long[] theArray;
     private int nElems;
 
@@ -75,10 +79,6 @@ class MergeSortApp {
         array.insert(12);
         array.insert(81);
         array.insert(-5);
-        array.insert(566);
-        array.insert(15);
-        array.insert(61);
-        array.insert(-53);
 
         array.display();
 
