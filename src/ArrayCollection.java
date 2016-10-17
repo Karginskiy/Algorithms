@@ -74,7 +74,10 @@ public class ArrayCollection<T> implements Collection<T> {
 
     @Override
     public boolean containsAll(Collection<?> c) {
-        return false;
+        for (Object item: c) {
+            if (!this.contains(item)) return false;
+        }
+        return true;
     }
 
     @Override
