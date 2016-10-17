@@ -50,7 +50,12 @@ public class ArrayCollection<T> implements Collection<T> {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public boolean add(T t) {
+        if (m.length == size) {
+            final T[] oldM = m;
+            m = (T[]) new Object[this.size() * 2];
+        }
         return false;
     }
 
