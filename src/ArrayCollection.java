@@ -44,8 +44,9 @@ public class ArrayCollection<T> implements Collection<T> {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public <T1> T1[] toArray(T1[] a) {
-        return null;
+        return (T1[]) this.toArray();
     }
 
     @Override
