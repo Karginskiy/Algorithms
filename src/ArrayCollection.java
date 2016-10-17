@@ -73,7 +73,7 @@ public class ArrayCollection<T> implements Collection<T> {
     }
 
     @Override
-    public boolean containsAll(Collection<?> c) {
+    public boolean containsAll(final Collection<?> c) {
         for (Object item: c) {
             if (!this.contains(item)) return false;
         }
@@ -81,17 +81,23 @@ public class ArrayCollection<T> implements Collection<T> {
     }
 
     @Override
-    public boolean addAll(Collection<? extends T> c) {
-        return false;
+    public boolean addAll(final Collection<? extends T> c) {
+        for (final T item : c) {
+            add(item);
+        }
+        return true;
     }
 
     @Override
-    public boolean removeAll(Collection<?> c) {
-        return false;
+    public boolean removeAll(final Collection<?> c) {
+        for (final Object item : c) {
+            remove(item);
+        }
+        return true;
     }
 
     @Override
-    public boolean retainAll(Collection<?> c) {
+    public boolean retainAll(final Collection<?> c) {
         return false;
     }
 
