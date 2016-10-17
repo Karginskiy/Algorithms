@@ -98,7 +98,10 @@ public class ArrayCollection<T> implements Collection<T> {
 
     @Override
     public boolean retainAll(final Collection<?> c) {
-        return false;
+        for (final Object item : this) {
+            if (!contains(item)) this.remove(item);
+        }
+        return true;
     }
 
     @Override
