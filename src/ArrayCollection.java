@@ -55,13 +55,20 @@ public class ArrayCollection<T> implements Collection<T> {
         if (m.length == size) {
             final T[] oldM = m;
             m = (T[]) new Object[this.size() * 2];
+            System.arraycopy(oldM, 0, m, 0, oldM.length);
         }
         return false;
     }
 
     @Override
     public boolean remove(Object o) {
-        return false;
+        for (int i = 0; i < size(); i++) {
+            if (m[i].equals(o) && i != this.size() - 1) {
+                System.arraycopy(m, i + 1, m, i, this.size() - i);
+            }
+            size--;
+        }
+        return true;
     }
 
     @Override
