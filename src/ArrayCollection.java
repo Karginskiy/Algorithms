@@ -65,10 +65,11 @@ public class ArrayCollection<T> implements Collection<T> {
         for (int i = 0; i < size(); i++) {
             if (m[i].equals(o) && i != this.size() - 1) {
                 System.arraycopy(m, i + 1, m, i, this.size() - i);
+                size--;
+                return true;
             }
-            size--;
         }
-        return true;
+        return false;
     }
 
     @Override
