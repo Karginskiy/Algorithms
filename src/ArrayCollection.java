@@ -105,8 +105,10 @@ public class ArrayCollection<T> implements Collection<T> {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public void clear() {
-
+        m = (T[]) new Object[1];
+        this.size = 0;
     }
 
     private class ElementsIterator implements Iterator<T> {
