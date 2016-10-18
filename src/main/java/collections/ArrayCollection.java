@@ -1,8 +1,10 @@
+package collections;
+
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-class ArrayCollection<T> implements Collection<T> {
+public class ArrayCollection<T> implements Collection<T> {
 
     @SuppressWarnings("unchecked")
     private T[] m = (T[])new Object[10];
