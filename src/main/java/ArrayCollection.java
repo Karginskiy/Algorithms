@@ -161,6 +161,14 @@ class ArrayCollection<T> implements Collection<T> {
             }
             return ArrayCollection.this.m[size++];
         }
+
+        @Override
+        public void remove() {
+            if (size < ArrayCollection.this.size() - 1) {
+                System.arraycopy(ArrayCollection.this.m, size + 1,
+                        ArrayCollection.this.m, size, ArrayCollection.this.size() - size - 1);
+            }
+        }
         // END
     }
 
